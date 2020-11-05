@@ -24,3 +24,5 @@ output "Updating packages"
 sudo apt-get update -y
 sudo apt-get upgrade -y
 output "Finished upgrading packages"
+
+# added systemctl support and more apt packages
