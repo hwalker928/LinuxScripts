@@ -16,7 +16,9 @@ systemctl enable nginx
 systemctl start firewalld
 systemctl enable firewalld
 firewall-cmd --permanent --zone=public --add-service=http
+firewall-cmd --permanent --zone=public --add-service=https
 firewall-cmd --permanent --zone=public --add-port=80/tcp
+firewall-cmd --permanent --zone=public --add-port=443/tcp
 firewall-cmd --reload
 output "Please enter your FQDN (img.example.com):"
 read domain
