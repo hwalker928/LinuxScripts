@@ -16,9 +16,6 @@ output "Making server folder!"
 mkdir $servername &> /dev/null
 cd $servername
 output "Created server folder!"
-output "Installing Java!"
-sudo apt install openjdk-8-jre-headless -y
-output "Java was installed!"
 
 output "Downloading tuinity-paperclip.jar!"
 wget https://ci.codemc.io/job/Spottedleaf/job/Tuinity/lastSuccessfulBuild/artifact/tuinity-paperclip.jar &> /dev/null
