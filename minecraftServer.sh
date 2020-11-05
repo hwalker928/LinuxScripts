@@ -17,7 +17,7 @@ mkdir $servername &> /dev/null
 cd $servername
 output "Created server folder!"
 output "Installing Java!"
-apt install openjdk-8-jre-headless -y &> /dev/null
+apt install openjdk-8-jre-headless -y
 output "Java was installed!"
 
 output "Downloading tuinity-paperclip.jar!"
