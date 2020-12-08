@@ -61,8 +61,7 @@ if [ ${ssloption} == 'y' ]; then
     ln -s /snap/bin/certbot /usr/bin/certbot
     output "Please enter an email address:"
     read emailadd
-    certbot certonly --standalone --email "$emailadd" --agree-tos -d "$domain" --non-interactive
-    certbot renew --dry-run
+    certbot --nginx
     output "Script finished."
 else
     output "Script finished."
