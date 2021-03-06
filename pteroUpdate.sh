@@ -17,7 +17,7 @@ output "- both"
 read what_to_update
 
 if [ ${what_to_update} == 'panel' ]; then
-  # Checks php version
+  cd /var/www/pterodactyl
   php -v > /tmp/php.ver
   if [ ! grep -q "v7" "php.ver"]; then
       if [ ! grep -q "v8" "php.ver"]; then
