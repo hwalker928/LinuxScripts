@@ -47,8 +47,7 @@ if [ ${what_to_update} == 'panel' ]; then
   output "Updated panel to v1.3.0!"
   fi
   exit
-fi
-if [ ${what_to_update} == 'wings' ]; then
+elif [ ${what_to_update} == 'wings' ]; then
   curl -L -o /usr/local/bin/wings https://github.com/pterodactyl/wings/releases/latest/download/wings_linux_amd64
   chmod u+x /usr/local/bin/wings
   systemctl restart wings
