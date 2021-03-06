@@ -19,8 +19,8 @@ read what_to_update
 if [ ${what_to_update} == 'panel' ]; then
   cd /var/www/pterodactyl
   php -v > /tmp/php.ver
-  if [ ! grep -q "v7" "php.ver"]; then
-      if [ ! grep -q "v8" "php.ver"]; then
+  if [ ! grep -q "v7" "php.ver" ]; then
+      if [ ! grep -q "v8" "php.ver" ]; then
         warn "You have an unsupported version of PHP."
         exit
       fi
@@ -28,7 +28,7 @@ if [ ${what_to_update} == 'panel' ]; then
   
   export COMPOSER_ALLOW_SUPERUSER=1;
   composer --version > /tmp/comp.ver
-  if [ ! grep -q "2" "comp.ver"]; then
+  if [ ! grep -q "2" "comp.ver" ]; then
     output "Updating composer.."
     composer self-update --2
   fi
