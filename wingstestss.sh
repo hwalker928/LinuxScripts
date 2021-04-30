@@ -2,8 +2,8 @@ output(){
     echo -e '\e[36m'$1'\e[0m';
 }
 
-if [[ $(wings version) =~ "v1.4.1" ]]; then
+if [[ $(wings version) =~ $(curl -s https://cdn.pterodactyl.io/releases/latest.json | jq -r '.wings') ]]; then
     output "Latest wings"
 else
-    output "Please run this command as root."
+    curl -s https://cdn.pterodactyl.io/releases/latest.json | jq -r '.wings'
 fi
