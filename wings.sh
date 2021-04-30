@@ -12,7 +12,7 @@ if [ $(whoami) = 'root' ]; then
     systemctl restart wings > /dev/null 2>&1
     output "Done!"
 else
-	output "Please run this command as root."
+    output "Please run this command as root."
 fi
 
 
