@@ -14,5 +14,3 @@ if [ $(whoami) = 'root' ]; then
 else
     output "Please run this command as root."
 fi
-
-
