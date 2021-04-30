@@ -1,6 +1,4 @@
 # LinuxScripts
-My bunch of scripts I mainly created myself.
-## wings.sh
-`sudo su`
-
-`bash <(curl -sSL https://raw.githubusercontent.com/hwalker928/LinuxScripts/main/wings.sh)`
+My bunch of Linux scripts I made myself to simplify tasks.
+|-----|-----|-----|
+|Wings updater|`bash <(curl -sSL https://raw.githubusercontent.com/hwalker928/LinuxScripts/main/wings.sh)`|Requires root|
