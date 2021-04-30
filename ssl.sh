@@ -1,9 +1,3 @@
-echo "enter domain"
-read domain
-systemctl stop nginx
-certbot certonly --standalone -d ${domain}
-systemctl start nginx
-
 output(){
     echo -e '\e[36m'$1'\e[0m';
 }
