@@ -15,6 +15,12 @@ if [ $(whoami) = 'root' ]; then
         output "Restarting wings.."
         systemctl restart wings > /dev/null 2>&1
         output "Updated to latest wings!"
+        if [[ $(wings version) =~ $(curl -s https://cdn.pterodactyl.io/releases/latest.json | jq -r '.wings') ]]; then
+            output "Version check successful."
+        else
+            output "Version check failed."
+            output "Try manually updating."
+        fi
     fi
 else
     output "Please run this command as root."
