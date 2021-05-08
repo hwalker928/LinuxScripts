@@ -8,6 +8,7 @@ if [ $(whoami) = 'root' ]; then
     output "Running as root.."
     echo "Make sure the latest panel.tar.gz file is in /var/www/pterodactyl before continuing!"
     read -p "Press enter to continue or CTRL+C to abort"
+    export COMPOSER_ALLOW_SUPERUSER=1
     cd /var/www/pterodactyl
     php artisan down
     tar -xzvf panel.tar.gz
@@ -20,6 +21,7 @@ if [ $(whoami) = 'root' ]; then
     chown -R www-data:www-data /var/www/pterodactyl/*
     php artisan queue:restart
     php artisan up
+    rm panel.tar.gz
     output "Update finished."
 else
     output "Please run this command as root."
