@@ -1,12 +1,18 @@
-output(){
-    echo -e '\e[36m'$1'\e[0m';
+INFO='\033[0;36m'
+WARN='\033[0;31m'
+BRACKETS='\033[0;30m'
+info(){
+    echo -e "${BRACKETS}[${INFO}INFO${BRACKETS}]${1}";
+}
+warn(){
+    echo -e "${BRACKETS}[${WARN}WARN${BRACKETS}]${1}";
 }
 
 output "Please note, this only works for harrydev!"
 
 if [ $(whoami) = 'root' ]; then
-    output "Running as root.."
-    echo "Make sure the latest panel.tar.gz file is in /var/www/pterodactyl before continuing!"
+    info "Running as root.."
+    warn "Make sure the latest panel.tar.gz file is in /var/www/pterodactyl before continuing!"
     read -p "Press enter to continue or CTRL+C to abort"
     export COMPOSER_ALLOW_SUPERUSER=1
     cd /var/www/pterodactyl
@@ -22,7 +28,7 @@ if [ $(whoami) = 'root' ]; then
     php artisan queue:restart
     php artisan up
     rm panel.tar.gz
-    output "Update finished."
+    info "Update finished."
 else
-    output "Please run this command as root."
+    info "Please run this command as root."
 fi
