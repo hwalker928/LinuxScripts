@@ -8,7 +8,7 @@ warn(){
     echo -e "${BRACKETS}[${WARN}WARN${BRACKETS}]${1}";
 }
 
-output "Please note, this only works for harrydev!"
+info "Please note, this only works for harrydev!"
 
 if [ $(whoami) = 'root' ]; then
     info "Running as root.."
