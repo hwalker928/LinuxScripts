@@ -6,9 +6,9 @@ if [ $(whoami) = 'root' ]; then
     output "Running as root.."
     output "Enter domain to generate SSL certificate for:"
     read domain
-    systemctl stop nginx
-    certbot certonly --standalone -d ${domain}
-    systemctl start nginx
+    apt update
+    apt install -y certbot python3-certbot-nginx
+    certbot certonly --nginx -d ${domain}
     output "Finished script."
 else
     output "Please run this command as root."
